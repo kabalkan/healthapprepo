@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Following code has been commented with appropriate comments for your reference. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Navbar.css">
+</head>
+<body>
+    <nav>
+        <!-- Navigation logo section -->
+        <div class="nav__logo">
+          <!-- Link to the home page -->
+          <div href="/">
+            StayHealthy
+          </div>
+          <!-- A span element for styling purposes -->
+          <span>.</span>
+        </div>
+        <!-- Navigation icon section with an onClick event listener -->
+        <div class="nav__icon" onClick={handleClick}>
+          <!-- Font Awesome icon for bars (hamburger menu) -->
+          <i class="fa fa-times fa fa-bars"></i>
+        </div>
+
+        <!-- Unordered list for navigation links with 'active' class -->
+        <ul class="nav__links active">
+          <!-- List item for the 'Home' link -->
+          <li class="link">
+            <a href="../Landing_Page/LandingPage.html">Home</a>
+          </li>
+          <!-- List item for the 'Appointments' link -->
+          <li class="link">
+            <a href="../Appointments/Appointments.html">Book Appointments</a>
+          </li>
+          <!-- List item for the 'Sign Up' link with a button -->
+          <li class="link">
+            <a href="../Sign_Up/Sign_Up.html">Sign Up</a>
+          </li>
+          <!-- List item for the 'Login' link with a button -->
+          <li class="link">
+            <a href="../Login/Login.html">Login</a>
+          </li>
+        </ul>
+    </nav>
+</body>
+</html>

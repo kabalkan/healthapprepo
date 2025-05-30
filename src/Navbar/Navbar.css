@@ -1,0 +1,183 @@
+/* Import Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+/* Main navigation bar */
+nav {
+    padding: 1.5rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    z-index: 999;
+}
+
+/* Logo styling */
+.nav__logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #717171;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+}
+
+.nav__logo span {
+    color: #3685fb;
+}
+
+/* Nav icon (hamburger) - hidden by default */
+.nav__icon {
+    display: none;
+}
+
+.nav-button {
+    font-family: 'Roboto', sans-serif;
+    background-color: #B9EDEF;
+    color: black;
+    border: 2px solid #B9EDEF;
+    border-radius: 999px; /* pill shape */
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 160px;     /* force consistent width */
+    height: 50px;         /* force consistent height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Nav links container */
+.nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 2rem;
+    padding: 0 2rem;
+}
+
+/* Individual nav link items */
+.link a {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+    background-color: #B9EDEF;
+    border: 2px solid #B9EDEF;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.link a:hover {
+    background-color: #a6e5f0;
+}
+
+/* Dropdown styling */
+.welcome-user {
+    position: relative;
+    cursor: pointer;
+}
+
+.welcome-user:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    display: none;
+    min-width: 120px;
+    padding: 8px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.dropdown-menu li {
+    display: block;
+    padding: 5px;
+    width: 150px;
+}
+
+.dropdown-menu li a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Buttons */
+.btn1,
+.btn2 {
+    font-family: 'Roboto', sans-serif;
+    background-color: #B9EDEF;
+    color: black;
+    border: 2px solid #B9EDEF;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn1:hover,
+.btn2:hover {
+    background-color: #a6e5f0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav__icon {
+        display: block;
+    }
+
+    .nav__links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav__links.active {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        animation: slideDown 0.5s ease-in-out;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
