@@ -3,6 +3,8 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
+import Landing_page from './components/Landing_Page/Landing_page';
+
 
 function App() {
   return (
