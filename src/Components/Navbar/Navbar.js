@@ -1,4 +1,7 @@
 import './Navbar.css';
+function handleClick() {
+  console.log("Button clicked!");
+}
 
 function Navbar() {
   return (
