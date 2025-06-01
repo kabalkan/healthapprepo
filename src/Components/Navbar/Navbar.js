@@ -2,7 +2,7 @@ import './Navbar.css';
 function handleClick() {
   console.log("Button clicked!");
 }
-
+import { Link } from 'react-router-dom';
 function Navbar() {
   return (
     <div>
@@ -18,9 +18,9 @@ function Navbar() {
         </div>
 
         <ul className="nav__links active">
-          <li className="link">
-            <a href="../Landing_Page/LandingPage.html">Home</a>
-          </li>
+        <li className="link">
+            <Link to="/">Home</Link>
+        </li>
           <li className="link">
             <a href="../Appointments/Appointments.html">Book Appointments</a>
           </li>
