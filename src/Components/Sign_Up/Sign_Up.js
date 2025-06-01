@@ -17,6 +17,7 @@ const Sign_Up = () => {
     // Function to handle form submission
     const register = async (e) => {
         e.preventDefault(); // Prevent default form submission
+        console.log("Register function called");
 
         // API Call to register user
         const response = await fetch(`${API_URL}/api/auth/register`, {
@@ -74,13 +75,61 @@ const Sign_Up = () => {
                     <form method="POST" onSubmit={register}>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
-                            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
+                            <input value={email} 
+                                    onChange={(e) => setEmail(e.target.value)} 
+                                    type="email" 
+                                    name="email" 
+                                    id="email" 
+                                    className="form-control" 
+                                    placeholder="Enter your email" 
+                                    aria-describedby="helpId" 
+                            />
                             {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
+                        </div>
+
+                        <div className="form-group">
+                        <label htmlFor="name">Name</label>
+                            <input
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                type="text"
+                                name="name"
+                                id="name"
+                                className="form-control"
+                                placeholder="e.g. Jane Doe"
+                                required
+                            />
+                        </div>
+                            <div className="form-group">
+                            <label htmlFor="phone">Phone</label>
+                            <input
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                type="tel"
+                                name="phone"
+                                id="phone"
+                                className="form-control"
+                                placeholder="e.g. +44 123 456 789"
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                type="password"
+                                name="password"
+                                id="password"
+                                className="form-control"
+                                placeholder="Enter your password"
+                                required
+                            />
                         </div>
                         {/* Apply similar logic for other form elements like name, phone, and password to capture user information */}
                         <div className="form-buttons">
-                        <button type="submit" className="btn1">Sign Up</button>
-                        <button type="button" className="btn2" onClick={resetForm}>Reset</button>
+                            <button type="submit" className="btn1">Submit</button>
+                            <button type="button" className="btn2" onClick={resetForm}>Reset</button>
                         </div>
                     </form>
                 </div>
