@@ -25,10 +25,15 @@ function Navbar() {
             <a href="../Appointments/Appointments.html">Book Appointments</a>
           </li>
           <li className="link">
-            <a href="../Sign_Up/Sign_Up.html">Sign Up</a>
+            {/* <a href="../Sign_Up/Sign_Up.html">Sign Up</a> */}
+            <Link to="/Sign_Up">Sign Up</Link>
           </li>
           <li className="link">
             <a href="../Login/Login.html">Login</a>
+          </li>
+
+          <li className="link logout-button">
+            <Link to="/Sign_Up" className="logout-link">Logout</Link>
           </li>
         </ul>
     </nav>

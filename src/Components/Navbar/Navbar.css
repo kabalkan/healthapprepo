@@ -22,6 +22,7 @@ nav {
     z-index: 999;
 }
 
+
 /* Logo styling */
 .nav__logo {
     font-size: 2rem;
@@ -88,6 +89,22 @@ nav {
 .link a:hover {
     background-color: #a6e5f0;
 }
+
+.link.logout-button .logout-link {
+    background-color: transparent;
+    border: none;
+    color: #717171;
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+  }
+  
+  /* Optional hover effect */
+  .link.logout-button .logout-link:hover {
+    background-color: rgba(185, 237, 239, 0.1); /* subtle hover */
+    color: #3685fb;
+  }
 
 /* Dropdown styling */
 .welcome-user {
