@@ -73,7 +73,7 @@ const Sign_Up = () => {
         <div className="container" style={{marginTop:'5%'}}>
             <div className="signup-grid">
                 <div className="signup-form">
-                    {/* <form method="POST" onSubmit={register}>
+                    <form method="POST" onSubmit={register}>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
                             <input value={email} 
@@ -132,7 +132,7 @@ const Sign_Up = () => {
                             <button type="submit" className="btn1">Submit</button>
                             <button type="button" className="btn2" onClick={resetForm}>Reset</button>
                         </div>
-                    </form> */}
+                    </form>
                     <form onSubmit={(e) => {
                         e.preventDefault();
                         console.log("Minimal form triggered");
