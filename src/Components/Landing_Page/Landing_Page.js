@@ -9,7 +9,7 @@ const Landing_Page = () => {
       <div>
         <div data-aos="fade-up" className="flex-hero"> {/* Creating a div with data-aos attribute and className name 'flex-hero' */}
             
-            <h1 style={{ color: "white" }}>
+            <h1 style={{ color: "white" }} className="hero-heading">
               Your <span style={{ color: "#B9EDEF" }}>Health</span>. Your <span style={{ color: "#B9EDEF" }}>Choice</span>.
             </h1>
               <div className="blob-cont"> {/* Creating a div with className name 'blob-cont' */}
