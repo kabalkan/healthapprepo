@@ -50,6 +50,22 @@ const Sign_Up = () => {
     }
     };
 
+    const resetForm = () => {
+        // Clear form fields
+        setName('');
+        setEmail('');
+        setPhone('');
+        setPassword('');
+        setShowerr('');
+        
+        // Remove relevant sessionStorage keys
+        sessionStorage.removeItem("email");
+        sessionStorage.removeItem("username");
+        sessionStorage.removeItem("name");
+        sessionStorage.removeItem("phone");
+        sessionStorage.removeItem("auth-token");
+        };
+
     // JSX to render the Sign Up form
     return (
         <div className="container" style={{marginTop:'5%'}}>
@@ -62,7 +78,10 @@ const Sign_Up = () => {
                             {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
                         </div>
                         {/* Apply similar logic for other form elements like name, phone, and password to capture user information */}
+                        <div className="form-buttons">
                         <button type="submit" className="btn1">Sign Up</button>
+                        <button type="button" className="btn2" onClick={resetForm}>Reset</button>
+                        </div>
                     </form>
                 </div>
             </div>

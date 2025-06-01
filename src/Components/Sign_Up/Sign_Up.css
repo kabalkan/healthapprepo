@@ -128,3 +128,28 @@ body {
     background-color: #dc3545; /* Set background color for danger button */
     color: #fff; /* Set text color for danger button */
 }
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn1, .btn2 {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn1 {
+  background-color: #2BDF67;
+  color: black;
+}
+
+.btn2 {
+  background-color: #F94949;
+  color: #333;
+  border: none;
+}
