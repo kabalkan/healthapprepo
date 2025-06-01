@@ -1,9 +1,21 @@
 import './Navbar.css';
+import React, { useEffect, useState } from 'react';
+
 function handleClick() {
   console.log("Button clicked!");
 }
 import { Link } from 'react-router-dom';
 function Navbar() {
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+        const storedUsername = sessionStorage.getItem("username");
+        if (storedUsername) {
+        // Capitalize first letter
+        const capitalized = storedUsername.charAt(0).toUpperCase() + storedUsername.slice(1);
+        setUsername(capitalized);
+        }
+    }, []);
   return (
     <div>
     <nav>
@@ -31,7 +43,9 @@ function Navbar() {
           <li className="link">
             <a href="../Login/Login.html">Login</a>
           </li>
-
+            {username && (
+            <li className="link welcome-message">Welcome, {username}</li>
+            )}
           <li className="link logout-button">
             <Link to="/Sign_Up" className="logout-link">Logout</Link>
           </li>

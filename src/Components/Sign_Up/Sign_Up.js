@@ -35,24 +35,19 @@ const Sign_Up = () => {
         const json = await response.json(); // Parse the response JSON
 
         if (json.authtoken) {
-            // Store user data in session storage
-            sessionStorage.setItem("auth-token", json.authtoken);
-            sessionStorage.setItem("name", name);
-            sessionStorage.setItem("phone", phone);
-            sessionStorage.setItem("email", email);
+        // Store user data in session storage
+        sessionStorage.setItem("auth-token", json.authtoken);
+        sessionStorage.setItem("name", name);
+        sessionStorage.setItem("phone", phone);
+        sessionStorage.setItem("email", email);
 
-            // Redirect user to home page
-            navigate("/");
-            window.location.reload(); // Refresh the page
-        } else {
-            if (json.errors) {
-                for (const error of json.errors) {
-                    setShowerr(error.msg); // Show error messages
-                }
-            } else {
-                setShowerr(json.error);
-            }
-        }
+        const username = email.split('@')[0];
+        sessionStorage.setItem("username", username);
+
+        // Redirect user to home page
+        navigate("/");
+        window.location.reload(); // Refresh the page
+    }
     };
 
     // JSX to render the Sign Up form
@@ -67,6 +62,7 @@ const Sign_Up = () => {
                             {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
                         </div>
                         {/* Apply similar logic for other form elements like name, phone, and password to capture user information */}
+                        <button type="submit" className="btn1">Sign Up</button>
                     </form>
                 </div>
             </div>
