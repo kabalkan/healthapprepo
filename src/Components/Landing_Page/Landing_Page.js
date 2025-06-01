@@ -9,11 +9,8 @@ const Landing_Page = () => {
       <div>
         <div data-aos="fade-up" className="flex-hero"> {/* Creating a div with data-aos attribute and className name 'flex-hero' */}
             
-            <h1>
-
-              <span className="text-gradient">
-              Your Health. Your Choice.
-              </span>
+            <h1 style={{ color: "white" }}>
+              Your <span style={{ color: "#B9EDEF" }}>Health</span>. Your <span style={{ color: "#B9EDEF" }}>Choice</span>.
             </h1>
               <div className="blob-cont"> {/* Creating a div with className name 'blob-cont' */}
                   <div className="blue blob"></div> {/* Creating a blue blob inside the 'blob-cont' div */}
@@ -21,12 +18,6 @@ const Landing_Page = () => {
               <div className="blob-cont"> {/* Creating another div with className name 'blob-cont' */}
                   <div className="blue1 blob"></div> {/* Creating a different blue blob inside the second 'blob-cont' div */}
               </div>
-            <h4>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque at quae ducimus. Suscipit omnis quibusdam non cum rem voluptatem!
-            </h4>
-            <a href="#services"> {/* Creating a hyperlink to jump to the 'services' section */}
-              <button className="button">Get Started</button> {/* Creating a button with className name 'button' */}
-            </a>
         </div>
       </div>
     </section>
