@@ -133,13 +133,6 @@ const Sign_Up = () => {
                             <button type="button" className="btn2" onClick={resetForm}>Reset</button>
                         </div>
                     </form>
-                    <form onSubmit={(e) => {
-                        e.preventDefault();
-                        console.log("Minimal form triggered");
-                        }}>
-                        <input type="text" name="test" />
-                        <button type="submit">Test Submit</button>
-                        </form>
                 </div>
             </div>
         </div>

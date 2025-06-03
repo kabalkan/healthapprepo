@@ -33,22 +33,23 @@ function Navbar() {
         <li className="link">
             <Link to="/">Home</Link>
         </li>
-          <li className="link">
-            <a href="../Appointments/Appointments.html">Book Appointments</a>
-          </li>
-          <li className="link">
-            {/* <a href="../Sign_Up/Sign_Up.html">Sign Up</a> */}
+            <li className="link">
+            <Link to="/Appointments">Book Appointments</Link>
+        </li>
+
+        <li className="link">
             <Link to="/Sign_Up">Sign Up</Link>
-          </li>
-          <li className="link">
-            <a href="../Login/Login.html">Login</a>
-          </li>
+        </li>
+        <li className="link">
+            <Link to="/Login">Login</Link> 
+        </li>
             {username && (
-            <li className="link welcome-message">Welcome, {username}</li>
+        <li className="link welcome-message">Welcome, {username}</li>
             )}
-          <li className="link logout-button">
+
+        <li className="link logout-button">
             <Link to="/Sign_Up" className="logout-link">Logout</Link>
-          </li>
+        </li>
         </ul>
     </nav>
 </div>
