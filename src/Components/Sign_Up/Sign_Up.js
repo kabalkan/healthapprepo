@@ -14,7 +14,7 @@ const Sign_Up = () => {
     const [password, setPassword] = useState('');
     const [showerr, setShowerr] = useState(''); // State to show error messages
     const navigate = useNavigate(); // Navigation hook from react-router
-
+    const [errors, setErrors] = useState({});
     // Function to handle form submission
     const register = async (e) => {
         e.preventDefault(); // Prevent default form submission
@@ -32,9 +32,12 @@ const Sign_Up = () => {
                 password: password,
                 phone: phone,
             }),
-        });
+        }) ;
+        
 
-        const json = await response.json(); // Parse the response JSON
+        console.log("Raw response:", response);
+        const json = await response.json();
+        console.log("Response JSON:", json);
 
         if (json.authtoken) {
         // Store user data in session storage

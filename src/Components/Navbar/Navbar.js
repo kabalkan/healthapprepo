@@ -1,10 +1,11 @@
 import './Navbar.css';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function handleClick() {
   console.log("Button clicked!");
 }
-import { Link } from 'react-router-dom';
+
 function Navbar() {
   const [username, setUsername] = useState("");
 
