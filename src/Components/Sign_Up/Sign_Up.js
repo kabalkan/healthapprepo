@@ -24,9 +24,9 @@ const Sign_Up = () => {
         const newErrors = {};
 
         if (!email.trim()) newErrors.email = "Email cannot be empty.";
-        if (!phone.trim()) newErrors.phone = "Phone number cannot be empty.";
+        if (!phone.trim()) newErrors.phone = "Phone number cannot be empty or longer than 10 digits.";
         if (!name.trim()) newErrors.name = "Name cannot be empty.";
-        if (password.length < 10) newErrors.password = "Password must be at least 10 characters long.";
+        if (password.length < 10) newErrors.password = "Password cannot be empty.";
 
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
@@ -106,7 +106,7 @@ const Sign_Up = () => {
                                     placeholder="Enter your email" 
                                     aria-describedby="helpId" 
                             />
-                            {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
+                            {errors.email && <div className="err" style={{ color: 'red' }}>{errors.email}</div>}
                         </div>
 
                         <div className="form-group">
@@ -114,13 +114,15 @@ const Sign_Up = () => {
                             <input
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                type="text"
+                                // type="text"
                                 name="name"
                                 id="name"
                                 className="form-control"
                                 placeholder="e.g. Jane Doe"
-                                required
+                                // required
                             />
+                            {errors.name && <div className="err" style={{ color: 'red' }}>{errors.name}</div>}
+
                         </div>
                             <div className="form-group">
                             <label htmlFor="phone">Phone</label>
@@ -132,8 +134,10 @@ const Sign_Up = () => {
                                 id="phone"
                                 className="form-control"
                                 placeholder="e.g. +44 123 456 789"
-                                required
+                                // required                                
                             />
+                            {errors.phone && <div className="err" style={{ color: 'red' }}>{errors.phone}</div>}
+
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
@@ -145,8 +149,9 @@ const Sign_Up = () => {
                                 id="password"
                                 className="form-control"
                                 placeholder="Enter your password"
-                                required
+                                // required
                             />
+                            {errors.password && <div className="err" style={{ color: 'red' }}>{errors.password}</div>}
                         </div>
 
                         <div className="form-buttons">
