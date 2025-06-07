@@ -92,6 +92,12 @@ const Sign_Up = () => {
     // JSX to render the Sign Up form
     return (
         <div className="container" style={{marginTop:'5%'}}>
+
+        <div className="signup-grid">
+            <div className="signup-text">
+                <h1>Sign&nbsp;Up</h1>
+            </div>
+        </div>
             <div className="signup-grid">
                 <div className="signup-form">
                     <form method="POST" onSubmit={register}>

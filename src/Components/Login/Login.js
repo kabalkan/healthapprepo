@@ -80,7 +80,7 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              {errors.email && <div className="err">{errors.email}</div>}
+              {errors.email && <div className="err" style={{ color: 'red' }}>{errors.email}</div>}
             </div>
 
             <div className="form-group">
@@ -93,7 +93,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              {errors.password && <div className="err">{errors.password}</div>}
+              {errors.password && <div className="err" style={{ color: 'red' }}>{errors.password}</div>}
             </div>
 
             <div className="btn-group">
