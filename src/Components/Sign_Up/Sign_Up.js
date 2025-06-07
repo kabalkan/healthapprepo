@@ -15,9 +15,27 @@ const Sign_Up = () => {
     const [showerr, setShowerr] = useState(''); // State to show error messages
     const navigate = useNavigate(); // Navigation hook from react-router
     const [errors, setErrors] = useState({});
+
+
     // Function to handle form submission
     const register = async (e) => {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
+
+        const newErrors = {};
+
+        if (!email.trim()) newErrors.email = "Email cannot be empty.";
+        if (!phone.trim()) newErrors.phone = "Phone number cannot be empty.";
+        if (!name.trim()) newErrors.name = "Name cannot be empty.";
+        if (password.length < 10) newErrors.password = "Password must be at least 10 characters long.";
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
+        // If no errors, clear previous ones
+        setErrors({});
+
         console.log("Register function called");
 
         // API Call to register user
