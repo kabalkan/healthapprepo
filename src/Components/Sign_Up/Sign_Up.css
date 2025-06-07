@@ -5,7 +5,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0 auto;
     padding: 2rem;
-    background-color: #B9EDEF;
+    background-color: transparent !important;
 }
 
 /* Styles for the container element */
@@ -15,7 +15,7 @@ body {
     padding: 50px; /* Add padding inside the container */
     margin-top: 10%; /* Set top margin as a percentage of the viewport height */
     overflow: hidden; /* Hide any overflowing content */
-    background-color: #B9EDEF;
+    background-color: transparent !important;
 }
 
 /* Styles for the password visibility icon */

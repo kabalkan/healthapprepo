@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0 auto;
     padding: 2rem;
-    background-color: #B9EDEF;
+    background-color: transparent !important;
 }
 
 /* Styles for the main container */
@@ -17,7 +17,7 @@ body {
     align-items: center;
     min-height: 100vh;
     text-align: center;
-    background-color: #B9EDEF;
+    background-color: transparent !important;
 }
 
 /* Styles for form groups */
