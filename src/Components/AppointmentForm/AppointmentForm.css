@@ -1,0 +1,60 @@
+.form-group {
+  margin-bottom: 1rem;
+}
+
+select, input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+/* Container */
+.appointment-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff; 
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+/* Input */
+.appointment-form input,
+.appointment-form select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+/* Buttons */
+.appointment-form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.appointment-form button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #b9edef;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.appointment-form button:hover {
+  background-color: #a0d7e1;
+}
+
+/* For responsiveness */
+@media (max-width: 600px) {
+  .appointment-form {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}

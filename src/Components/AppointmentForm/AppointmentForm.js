@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import './AppointmentForm.css';
+
 
 const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [name, setName] = useState('');
