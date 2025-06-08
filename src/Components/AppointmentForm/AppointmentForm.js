@@ -68,7 +68,7 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
             required
           />
         </div>
-        
+{/*         
         <div className="form-group">
           <label htmlFor="timeslot">Book a timeslot:</label>
           <input
@@ -78,7 +78,7 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
             onChange={(e) => setTimeslot(e.target.value)}
             required
           />
-        </div>
+        </div> */}
 
         <div className="form-group">
         <label htmlFor="timeslot">Book a timeslot:</label>

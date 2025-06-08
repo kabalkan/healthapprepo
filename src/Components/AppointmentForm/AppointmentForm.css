@@ -1,37 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .form-group {
   margin-bottom: 1rem;
 }
 
-select, input {
+/* select, input {
   width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
-}
-/* Container */
+} */
 .appointment-form {
+  width: 100%;
   max-width: 500px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #ffffff; 
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
-/* Input */
-.appointment-form input,
-.appointment-form select {
+
+/* Prevent input overflow */
+/* .appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
   width: 100%;
   padding: 0.75rem;
+  font-size: 1rem;
   margin-top: 0.25rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 1rem;
   box-sizing: border-box;
-}
-/* Buttons */
-.appointment-form label {
-  font-weight: 600;
+} */
+.appointment-form input,
+.appointment-form select,
+.appointment-form button {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   display: block;
+}
+.appointment-form .form-group {
+  width: 100%;
+}
+
+
+/* 
+.appointment-form label {
+  display: block;
+  font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
@@ -49,12 +77,4 @@ select, input {
 
 .appointment-form button:hover {
   background-color: #a0d7e1;
-}
-
-/* For responsiveness */
-@media (max-width: 600px) {
-  .appointment-form {
-    padding: 1rem;
-    margin: 1rem;
-  }
-}
+} */
