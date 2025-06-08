@@ -3,17 +3,34 @@ import React, { useState } from 'react'
 const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [appointmentDate, setAppointmentDate] = useState('');
+    const [timeslot, setTimeslot] = useState('');
     const [selectedSlot, setSelectedSlot] = useState(null);
   
     const handleSlotSelection = (slot) => {
       setSelectedSlot(slot);
     };
   
+
+    const generateTimeSlots = () => {
+        const slots = [];
+        for (let hour = 9; hour < 19; hour++) {
+        slots.push(`${hour.toString().padStart(2, '0')}:00`);
+        slots.push(`${hour.toString().padStart(2, '0')}:30`);
+        }
+        slots.push("19:00"); // include final slot
+        return slots;
+    };
+
+  const timeOptions = generateTimeSlots();
+
     const handleFormSubmit = (e) => {
       e.preventDefault();
-      onSubmit({ name, phoneNumber });
+      onSubmit({ name, phoneNumber, appointmentDate, timeslot });
       setName('');
       setPhoneNumber('');
+      setAppointmentDate('');
+      setTimeslot('');
     };
   
     return (
@@ -38,6 +55,44 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
             required
           />
         </div>
+        {/* Additions start here */}
+        <div className="form-group">
+          <label htmlFor="appointmentDate">Appointment Date:</label>
+          <input
+            type="date"
+            id="appointmentDate"
+            value={appointmentDate}
+            onChange={(e) => setAppointmentDate(e.target.value)}
+            required
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="timeslot">Book a timeslot:</label>
+          <input
+            type="time"
+            id="timeslot"
+            value={timeslot}
+            onChange={(e) => setTimeslot(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+        <label htmlFor="timeslot">Book a timeslot:</label>
+        <select
+          id="timeslot"
+          value={timeslot}
+          onChange={(e) => setTimeslot(e.target.value)}
+          required
+        >
+          <option value="">-- Select a time --</option>
+          {timeOptions.map((slot) => (
+            <option key={slot} value={slot}>{slot}</option>
+          ))}
+        </select>
+      </div>
+
         <button type="submit">Book Now</button>
       </form>
     );
