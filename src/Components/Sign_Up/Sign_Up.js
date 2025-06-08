@@ -15,6 +15,7 @@ const Sign_Up = () => {
     const [showerr, setShowerr] = useState(''); // State to show error messages
     const navigate = useNavigate(); // Navigation hook from react-router
     const [errors, setErrors] = useState({});
+    const [role, setRole] = useState('');
 
 
     // Function to handle form submission
@@ -22,7 +23,7 @@ const Sign_Up = () => {
         e.preventDefault();
 
         const newErrors = {};
-
+        if (!role) newErrors.role = "Please select a role.";
         if (!email.trim()) newErrors.email = "Email cannot be empty.";
         if (!phone.trim()) newErrors.phone = "Phone number cannot be empty or longer than 10 digits.";
         if (!name.trim()) newErrors.name = "Name cannot be empty.";
@@ -49,8 +50,10 @@ const Sign_Up = () => {
                 email: email,
                 password: password,
                 phone: phone,
+                role:role
             }),
         }) ;
+        
         
 
         console.log("Raw response:", response);
@@ -63,6 +66,7 @@ const Sign_Up = () => {
         sessionStorage.setItem("name", name);
         sessionStorage.setItem("phone", phone);
         sessionStorage.setItem("email", email);
+        sessionStorage.setItem("role", role);
 
         const username = email.split('@')[0];
         sessionStorage.setItem("username", username);
@@ -87,6 +91,8 @@ const Sign_Up = () => {
         sessionStorage.removeItem("name");
         sessionStorage.removeItem("phone");
         sessionStorage.removeItem("auth-token");
+        sessionStorage.removeItem("role");
+        
         };
 
     // JSX to render the Sign Up form
@@ -101,6 +107,24 @@ const Sign_Up = () => {
             <div className="signup-grid">
                 <div className="signup-form">
                     <form method="POST" onSubmit={register}>
+
+                        <div className="form-group">
+                        <label htmlFor="role">Role</label>
+                        <select
+                            id="role"
+                            name="role"
+                            value={role}
+                            onChange={(e) => setRole(e.target.value)}
+                            className="form-control"
+                        >
+                            <option value="">-- Select a role --</option>
+                            <option value="Patient">Patient</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                        {errors.role && <div className="err" style={{ color: 'red' }}>{errors.role}</div>}
+                        </div>
+
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
                             <input value={email} 

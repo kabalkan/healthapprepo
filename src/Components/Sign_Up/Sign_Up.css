@@ -70,7 +70,7 @@ body {
 .signup h1 {
     margin-bottom: 20px; /* Add bottom margin to the heading */
     text-align: center; /* Center-align text */
-    color: #3c79a7; /* Set text color */
+    color: #818181 !important; /* Set text color */
     letter-spacing: .1em; /* Add letter-spacing between characters */
 }
 

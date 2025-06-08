@@ -1,6 +1,6 @@
 .doctor-card-container {
     width: 300px;
-    height: 100%;
+    height: 400px !important;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
@@ -11,13 +11,17 @@
   }
   .cancel-appointment {
     background-color: red;
+    color:#fff;
   }
   
   .doctor-card-details-container {
     padding: 20px;
+    height:80% !important; 
+    background-color: #fff !important;
   }
   
   .doctor-card-profile-image-container {
+    padding-top: 30%;
     text-align: center;
     margin-bottom: 10px;
   }
@@ -29,6 +33,7 @@
   }
   
   .doctor-card-details {
+    /* padding-top: 40%; */
     text-align: center;
   }
   
@@ -62,10 +67,11 @@
   }
   
   .book-appoinment-btn {
-    background-color: #3498db;
-    color: #fff;
+    background-color: #B9EDEF;
+    color: #505050;
     border: none;
     padding: 10px 20px;
+    /* position: relative; */
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
@@ -107,8 +113,8 @@
 .modal-btn {
   display: inline-block;
   padding: 8px 16px;
-  background-color: #2196f3;
-  color: #fff;
+  background-color: #B9EDEF;
+  color: #505050;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -123,7 +129,7 @@
 
 }
 .modal-btn:hover {
-  background-color: #0d8af5;
+  background-color: #B9EDEF;
 }
 
 .cancel-appointment-btn {
@@ -171,8 +177,8 @@ textarea {
 
 button {
   padding: 12px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #B9EDEF;
+  color: #505050;
   border: none;
   border-radius: 4px;
   cursor: pointer;

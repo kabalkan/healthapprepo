@@ -38,7 +38,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
         <div className="doctor-card-details">
           <div className="doctor-card-detail-name">{name}</div>
           <div className="doctor-card-detail-speciality">{speciality}</div>
-          <div className="doctor-card-detail-experience">{experience} years experience</div>
+          <div className="doctor-card-detail-experience">{experience} years practicing</div>
           <div className="doctor-card-detail-consultationfees">Ratings: {ratings}</div>
         </div>
         {/* for reference  */}
