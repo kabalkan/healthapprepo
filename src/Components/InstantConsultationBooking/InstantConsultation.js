@@ -69,7 +69,7 @@ const InstantConsultation = () => {
             {isSearched ? (
                 <center>
                     <h2>{filteredDoctors.length} doctors are available {searchParams.get('location')}</h2>
-                    <h3>Book appointments with minimum wait-time & verified doctor details</h3>
+                    <h3>Only you know the doctor you really need.</h3>
                     {filteredDoctors.length > 0 ? (
                     filteredDoctors.map(doctor => <DoctorCard className="doctorcard" {...doctor} key={doctor.name} />)
                     ) : (

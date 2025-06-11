@@ -15,7 +15,8 @@ const Notification = ({ children }) => {
     // Retrieve stored username, doctor data, and appointment data from sessionStorage and localStorage
     const storedUsername = sessionStorage.getItem('email');
     const storedDoctorData = JSON.parse(localStorage.getItem('doctorData'));
-    const storedAppointmentData = JSON.parse(localStorage.getItem(storedDoctorData?.name));
+    const storedAppointmentDate = JSON.parse(localStorage.getItem('appointmentDate'));
+    const storedAppointmentTime = JSON.parse(localStorage.getItem('timeslot'));
 
     // Set isLoggedIn state to true and update username if storedUsername exists
     if (storedUsername) {
@@ -52,6 +53,7 @@ const Notification = ({ children }) => {
                 {/* Display doctor's name from doctorData */}
                 <strong>Doctor:</strong> {doctorData?.name}
                 <strong>User:</strong> {username?.name}
+                <strong>Date:</strong> {appointmentData?.date}
                 <strong>Time:</strong> {appointmentData?.time}
               </p>
             </div>
