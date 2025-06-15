@@ -9,6 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
   const [showModal, setShowModal] = useState(false);
   const [appointments, setAppointments] = useState([]);
+  const [showNotification, setShowNotification] = useState(false);
 
   const handleBooking = () => {
     setShowModal(true);
@@ -17,17 +18,39 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
   const handleCancel = (appointmentId) => {
     const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
     setAppointments(updatedAppointments);
+    localStorage.removeItem("appointment");
+    setShowModal(false); 
+    setShowNotification(false); 
+
   };
 
+
   const handleFormSubmit = (appointmentData) => {
+    
+    setShowNotification(true);
     const newAppointment = {
       id: uuidv4(),
       ...appointmentData,
+      doctorName: name,
+      doctorSpeciality: speciality
     };
+
+    // Update internal state
     const updatedAppointments = [...appointments, newAppointment];
     setAppointments(updatedAppointments);
-    setShowModal(false);
-  };
+
+    // ✅ Store in localStorage for Notification.js to read
+    localStorage.setItem("appointment", JSON.stringify({
+      doctorName: name,
+      speciality,
+      date: appointmentData.appointmentDate,
+      time: appointmentData.timeslot,
+      patientName: appointmentData.name,
+      phone: appointmentData.phoneNumber
+  }));
+
+  setShowModal(false);
+};
 
   return (
     <div className="doctor-card-container">
