@@ -9,6 +9,7 @@ import Login from './Components/Login/Login';
 import BookConsultation from './Components/BookConsultation/BookConsultation';
 import Notification from './Components/Notification/Notification';
 import NotificationOverlay from './Components/Notification/NotificationOverlay';
+import GiveReviews from './Components/ReviewForm/ReviewForm';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/Login" element={<Login />} /> 
           <Route path="/BookConsultation" element={<BookConsultation />} />
           <Route path="/Notification" element={<Notification />} />
+          <Route path="/Reviews" element={<GiveReviews />} />
         </Routes>
       </BrowserRouter>
 
