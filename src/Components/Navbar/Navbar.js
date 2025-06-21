@@ -1,5 +1,5 @@
 import './Navbar.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 function handleClick() {
@@ -8,15 +8,26 @@ function handleClick() {
 
 function Navbar() {
   const [username, setUsername] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef();
+  useEffect(() => {
+    const storedUsername = sessionStorage.getItem('username');
+    if (storedUsername) {
+      const capitalized = storedUsername.charAt(0).toUpperCase() + storedUsername.slice(1);
+      setUsername(capitalized);
+    }
+  }, []);
 
   useEffect(() => {
-        const storedUsername = sessionStorage.getItem("username");
-        if (storedUsername) {
-        // Capitalize first letter
-        const capitalized = storedUsername.charAt(0).toUpperCase() + storedUsername.slice(1);
-        setUsername(capitalized);
-        }
-    }, []);
+    const handleOutsideClick = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
+
   return (
     <div>
     <nav>
@@ -44,13 +55,33 @@ function Navbar() {
         <li className="link">
             <Link to="/Login">Login</Link> 
         </li>
-            {username && (
-        <li className="link welcome-message">Welcome, {username}</li>
+            
+        {/* Welcome message with dropdown */}
+        {username && (
+          <li className="link welcome-user" ref={dropdownRef}>
+            <span onClick={() => setShowDropdown((prev) => !prev)}>
+              Welcome, {username} ▼
+            </span>
+            {showDropdown && (
+              <div className="dropdown-menu">
+                <Link to="/Profile">My Profile</Link>
+                <Link to="/Reports">My Reports</Link>
+                <button
+                  onClick={() => {
+                    sessionStorage.clear();
+                    window.location.reload();
+                  }}
+                >
+                  Logout
+                </button>
+              </div>
             )}
+          </li>
+        )}
 
-        <li className="link logout-button">
+        {/* <li className="link logout-button">
             <Link to="/Sign_Up" className="logout-link">Logout</Link>
-        </li>
+        </li> */}
         </ul>
     </nav>
 </div>

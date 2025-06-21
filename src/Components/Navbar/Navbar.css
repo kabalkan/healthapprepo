@@ -1,11 +1,12 @@
 /* Import Roboto font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 2rem;
-    padding: 2rem;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 
 /* Main navigation bar */
 nav {
@@ -197,4 +198,46 @@ nav {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+.welcome-user {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  padding: 10px;
+  min-width: 180px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 0.95rem;
+  border: none;
+  background: none;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background: #f0f0f0;
+}
+
+.spacer {
+  height: 90px; /* match or slightly exceed navbar height */
 }
